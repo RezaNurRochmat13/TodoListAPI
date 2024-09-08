@@ -6,7 +6,6 @@ import (
 	"github.com/gofiber/fiber/v2"
 )
 
-// GetTask: function fetches a single task from the database
 func GetTask(c *fiber.Ctx) error {
 	id := c.Params("id")
 
@@ -36,6 +35,13 @@ func GetTask(c *fiber.Ctx) error {
 }
 
 // GetAllTasks: function fetches all the tasks from the database
+// GetAllTasks godoc
+// @Summary Show all tasks.
+// @Description show all tasks data
+// @Tags root
+// @Accept */*
+// @Produce json
+// @Success 200
 func GetAllTasks(c *fiber.Ctx) error {
 	result, err := database.GetallTasks()
     if err != nil {
